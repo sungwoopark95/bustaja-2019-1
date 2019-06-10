@@ -1,0 +1,34 @@
+<%= link_to image_tag("logo_3.png", class: "illustration_nav", id: "logoimg-pagever"), '/' %>
+<div class="login">
+    <p>팀 검색</p>
+</div>
+<div id="searchbar">
+    <%= form_tag(search_search_path, method: :get, id: "form") do %>
+        <%= text_field_tag :search, params[:search], size: "35", id: "search_input" %>
+        <%= submit_tag "검색", id: "search-button" %>
+    <% end %>
+    <%= form_tag(search_search_path, method: :get, id: "form") do %>
+        <%= submit_tag "초기화", id: "search-button" %>
+    <% end %>
+</div>
+
+<table id="usertable">
+    <tbody>
+        <tr>
+            <th id="header">아이디</th>
+            <th id="header">팀 이름</th>
+            <th id="header">시작일</th>
+            <th id="header">종료일</th>
+            <th id="header"> </th>
+        </tr>
+        <% for user in @users %>
+            <tr>
+                <td id="tableitem"><%= user.email %></td>
+                <td id="tableitem"><%= user.teamname %></td>
+                <td id="tableitem"><%= user.start_date %></td>
+                <td id="tableitem"><%= user.end_date %></td>
+                <td id="tableitem_login"><%= link_to '로그인', new_session_path %></td>
+            </tr>
+        <% end %>
+    </tbody>    
+</table>

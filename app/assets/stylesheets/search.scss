@@ -1,0 +1,89 @@
+// Place all the styles related to the search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900');
+#header {
+    text-align: center;
+    margin: auto 5px;
+    font-family: 'Noto Sans KR';
+    font-size: 17px;
+}
+
+#usertable {
+    border: 0.5px solid #f5f5f0;
+    font-family: 'Noto Sans KR';
+    width: 50%;
+    left: 25%;
+}
+
+#tableitem {
+    padding: 4px 15px;
+    text-align: center;
+    border: 0px;
+    font-family: 'Noto Sans KR';
+
+}
+
+#tableitem_login
+
+{
+    padding: 4px 15px;
+    text-align: center;
+    border: 0px;
+    font-family: 'Noto Sans KR';
+    font-size: 17px;
+    font-weight: 400;
+
+}
+
+
+#searchbar {
+    text-align: center;
+    font-family: 'Noto Sans KR';
+    top: 100px;
+}
+
+#form {
+    display: inline;
+    font-family: 'Noto Sans KR';
+}
+
+#usertable {
+    margin: auto;
+    border: 0px;
+    font-family: 'Noto Sans KR';
+}
+
+#search_input {
+    width: 287px;
+    height: 55px;
+    border-radius: 6px;
+    border: solid 0.5px lightgray;
+    background-color: #FFFFFF;
+    font-size: 20px;
+    color: black;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-right: 0px;
+    margin-left: 50px;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+}
+
+#search_input:focus
+{outline:none;}
+
+#search-button {
+    width: 120px;
+    height: 40px;
+    border-radius: 6px;
+    box-shadow: 0 0 4px 0 #5282ff;
+    border: solid 1.5px #5586ff;
+    background-color:#5282ff;
+    color: #FFFFFF;
+    font-size: 18px;
+    margin-right: 10px;
+    font-family: 'Noto Sans KR';
+    top: -2.8px;
+    left: 30px;
+}

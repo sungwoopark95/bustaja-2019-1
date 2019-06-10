@@ -1,0 +1,138 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900');
+
+html {font-family:'Noto Sans KR';}
+
+#logoimg-pagever {
+    width: 200px;
+    display: block;
+    margin-top: 30px;
+    margin-left: 70px;
+    padding: 0;
+}
+
+/* '회원 가입' 텍스트 부분 */
+.signin {
+    width: 632px;
+    height: 65px;
+    font-size: 29.2px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.22;
+    letter-spacing: normal;
+    text-align: center;
+    margin: -65px auto 90px auto;
+    color: #000000;
+    font-family:'Noto Sans KR';
+}
+
+.signin p {
+    margin-top: 20px;
+    font-family:'Noto Sans KR';
+}
+
+/* '*표시는 필수 입력 항목입니다' */
+#warning {
+    width: 220px;
+    height: 24px;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9f9f9f;
+    margin: auto;
+    position: relative;
+    left: -125px;
+    font-family:'Noto Sans KR';
+}
+
+#warning p {
+    margin-bottom: 20px;
+    font-family:'Noto Sans KR';
+}
+
+table {
+    margin: auto;
+    position: relative;
+    border-collapse: separate;
+    border-spacing: 0 20px;
+    font-family:'Noto Sans KR';
+}
+
+th {
+    text-align: left;
+}
+
+/* 입력 항목 부분 - 7개 모두 동일*/
+.inputitem {
+    width: 181px;
+    height: 35px;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: black;
+    font-family:'Noto Sans KR';
+}
+
+.inputitem:focus
+{outline:none;}
+
+.inputbox:focus
+{outline:none;}
+
+
+/* 입력 box 부분 - 7개 모두 동일 */
+.inputbox {
+    width: 287px;
+    height: 34px;
+    border-radius: 6px;
+    // box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+    border: solid 0.5px #D3D3D3;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    color: black;
+    padding-left: 13px;
+    padding-right: 8px;
+    font-family:'Noto Sans KR';
+    font-weight: 300;
+}
+
+/* 가입하기 전체 버튼 */
+#regbutton {
+    text-align: center;
+    font-family:'Noto Sans KR';
+    font-weight: 300;
+}
+
+#button {
+    width: 120px;
+    height: 40px;
+    border-radius: 6px;
+    box-shadow: 0 0 4px 0 #5282ff;
+    border: solid 1.5px #5586ff;
+    background-color:#5282ff;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family:'Noto Sans KR';
+    font-weight: 300;
+
+}
+
+button {
+    position: relative;
+    top: 70px;
+    cursor: pointer;
+    font-family:'Noto Sans KR';
+}
+
+button:focus {
+    outline: none;
+}

@@ -1,0 +1,57 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* 로그인 텍스트 box 부분 */
+.login {
+    width: 632px;
+    height: 65px;
+    font-size: 29.2px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.22;
+    letter-spacing: normal;
+    text-align: center;
+    margin: -65px auto 90px auto;
+    color: #000000;
+}
+#logoimg-pagever.illustration_nav {
+    width:150px;
+    height: auto;
+}
+
+.login p {
+    margin-top: 20px;
+}
+
+/* 가입하기 전체 버튼 */
+#loginbutton {
+    text-align: center;
+    
+}
+
+#button {
+    width: 120px;
+    height: 40px;
+    border-radius: 6px;
+    box-shadow: 0 0 4px 0 #5282ff;
+    border: solid 1.5px #5586ff;
+    background-color:#5282ff;
+    color: #FFFFFF;
+    font-size: 18px;
+    top: 0px;
+}
+
+button {
+    position: relative;
+    top: 40px;
+    left:170px;
+}
+
+button:focus {
+    outline: none;
+}
+
+.login_td {
+    border: 0px;
+}

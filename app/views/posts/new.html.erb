@@ -1,0 +1,36 @@
+
+
+<!--회의록 파트-->
+
+<div class="main_sentence2_record">
+  <span class="blue">회의록</span>을 저장하고,<br><span class="blue">지난 회의록</span>을 확인해보세요.
+</div>
+
+<div id="anchor2" class="container-post">
+
+	<!--지난 회의록, 회의록 목록-->
+	<div class="date_nav">
+		<p class="past"><a href="/posts/new">지난 회의록</a></p>
+		<% @posts.each do |post| %>
+		<p class="date"><a href="/posts/edit/<%=post.id%>"><%=post.title%></a></p>
+		<a href="/posts/destroy/<%=post.id %>"><span class="label label-danger">삭제</span></a>
+		<% end %>
+	</div>
+
+	
+
+	<!--회의록 텍스트 입력-->
+	<div class="textfield">
+		<!-- 회의록 제목-->
+		<form action="/posts/create" method="post">
+			<div class="upper">
+				<input name="title" id="title" type="text" placeholder="회의록 제목을 작성하세요." class="removeOnFocus">
+				<button id="save" type="submit" >저장</button>
+			</div>
+			<!-- 회의록 내용-->
+			<div class="notepad">
+				<textarea name="content" id="field" type="text" placeholder="회의록을 작성하세요." class="removeOnFocus"></textarea>
+			</div>
+		</form>
+	</div>
+</div>

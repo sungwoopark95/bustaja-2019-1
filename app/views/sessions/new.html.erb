@@ -1,0 +1,20 @@
+<%= link_to image_tag("logo_3.png", class: "illustration_nav", id: "logoimg-pagever"), '/' %>
+<div class="login">
+    <p>로그인</p>
+</div>
+<%= form_tag sessions_path do %>
+    <table>
+        <tbody>
+            <tr>
+                <th class="inputitem">이메일</th>
+                <td class= "login_td"><input class="inputbox" type="email" name="email" placeholder="이메일" required></td>
+            </tr>
+            <tr>
+                <th class="inputitem">비밀번호</th>
+                <td class="login_td"><input class="inputbox" type="password" name="password" placeholder="비밀번호" required></td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="loginbutton"><button id="button" type="submit">로그인</button></div>
+<% end %>
+

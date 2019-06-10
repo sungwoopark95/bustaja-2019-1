@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="timeslot.scss"/>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <script src="jquery-3.4.1.min.js"></script>
+
+  </head>
+      
+  <body id="time_body">
+      
+    <div class="left_nav_bar">
+        <%= link_to image_tag("logo_3.png", class: "illustration_nav", id: "logoimg"), '/' %>
+        <ul class="left_top_nav">
+
+        <hr>
+        <li class="left_top_nav_3"><%= link_to '시간표', users_show_path %></li>
+        <hr>
+        <li class="left_top_nav_3"><%= link_to '회의록', posts_show_path %></li>
+        <hr>
+        </ul>
+        <ul class="left_bottom_nav">
+        <hr>
+        <li><%= link_to '로그아웃', session_path(current_user), method: 'delete'  %></li>
+        <hr>
+        <ul>
+    </div>
+    <div class="main_sentence">
+        안 되는 시간을 클릭하여<br><span class="blue">회의 시간</span>을 정해보세요.
+    </div>
+    
+    <div class="Rectangle_bus">
+        <div class ="top-bar">
+            <table id='busmove'>
+                <tbody>
+                    <tr class="row">
+                        <% for i in (1..20) %>
+                            <% if i==@progress %>
+                                <td class="one"></td>
+                                <% next %>
+                            <% else %>
+                                <td></td>
+                            <% end %>
+                        <% end %>
+                        <div id="top_flag"><%= image_tag "flag.png"%></div>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+  
+    
+    <%= form_for(@user) do |f| %>
+
+
+
+      <div class="tablebox">
+        <table id="time_table">
+          <tbody id="time_tbody">
+            <tr>
+              <td class="timeTableCellDay"></td>
+              <td class="timeTableCellDay">월</td>
+              <td class="timeTableCellDay">화</td>
+              <td class="timeTableCellDay">수</td>
+              <td class="timeTableCellDay">목</td>
+              <td class="timeTableCellDay">금</td>
+              <td class="timeTableCellDay">토</td>
+              <td class="timeTableCellDay">일</td>
+            </tr>
+
+
+            <tr id='line1'>
+              <td class="timeTableCellTime">9:00</td>
+              <% Timeslot.all[0,7].each do |timeslot| %>
+                <td><label class="contain_timeslot"><%= check_box_tag "user[timeslot_ids][]", timeslot.id, @user.timeslot_ids.include?(timeslot.id) %><div class="checkmark" id="color_1"></div></label></td>
+              <% end %>
+            </tr>
+
+            <tr id='line2'>
+              <td class="timeTableCellTime">10:00</td>
+              <% Timeslot.all[7,7].each do |timeslot| %>
+                <td><label class="contain_timeslot"><%= check_box_tag "user[timeslot_ids][]", timeslot.id, @user.timeslot_ids.include?(timeslot.id) %><div class="checkmark" id="color_1"></div></label></td>
+              <% end %>
+            </tr>
+
+            <tr id='line3'>
+              <td class="timeTableCellTime">11:00</td>
+              <% Timeslot.all[14,7].each do |timeslot| %>
+                <td><label class="contain_timeslot"><%= check_box_tag "user[timeslot_ids][]", timeslot.id, @user.timeslot_ids.include?(timeslot.id) %><div class="checkmark" id="color_2"></div></label></td>
+              <% end %>
+            </tr>
+
+            <tr id='line4'>
+              <td class="timeTableCellTime">12:00</td>
+              <% Timeslot.all[21,7].each do |timeslot| %>
+                <td><label class="contain_timeslot"><%= check_box_tag "user[timeslot_ids][]", timeslot.id, @user.timeslot_ids.include?(timeslot.id) %><div class="checkmark" id="color_2"></div></label></td>
+              <% end %>
+            </tr>
+
+            <tr id='line5'>
+              <td class="timeTableCellTime">13:00</td>
+              <% Timeslot.all[28,7].each do |timeslot| %>
+                <td><label class="contain_timeslot"><%= check_box_tag "user[timeslot_ids][]", timeslot.id, @user.timeslot_ids.include?(timeslot.id) %><div class="checkmark" id="color_3"></div></label></td>
+              <% end %>
+            </tr>
+
+            <tr id='line6'>
+              <td class="timeTableCellTime">14:00</td>
+              <% Timeslot.all[35,7].each do |timeslot| %>
+                <td><label class="contain_timeslot"><%= check_box_tag "user[timeslot_ids][]", timeslot.id, @user.timeslot_ids.include?(timeslot.id) %><div class="checkmark" id="color_3"></div></label></td>
+              <% end %>
+            </tr>
+
+            <tr id='line7'>
+              <td class="timeTableCellTime">15:00</td>
+              <% Timeslot.all[42,7].each do |timeslot| %>
+                <td><label class="contain_timeslot"><%= check_box_tag "user[timeslot_ids][]", timeslot.id, @user.timeslot_ids.include?(timeslot.id) %><div class="checkmark" id="color_4"></div></label></td>
+              <% end %>
+            </tr>
+
+            <tr id='line8'>
+              <td class="timeTableCellTime">16:00</td>
+              <% Timeslot.all[49,7].each do |timeslot| %>
+                <td><label class="contain_timeslot"><%= check_box_tag "user[timeslot_ids][]", timeslot.id, @user.timeslot_ids.include?(timeslot.id) %><div class="checkmark" id="color_4"></div></label></td>
+              <% end %>
+            </tr>
+
+            <tr id='line9'>
+              <td class="timeTableCellTime">17:00</td>
+              <% Timeslot.all[56,7].each do |timeslot| %>
+                <td><label class="contain_timeslot"><%= check_box_tag "user[timeslot_ids][]", timeslot.id, @user.timeslot_ids.include?(timeslot.id) %><div class="checkmark" id="color_5"></div></label></td>
+              <% end %>
+            </tr>
+
+            <tr id='line10'>
+              <td class="timeTableCellTime">18:00</td>
+              <% Timeslot.all[63,7].each do |timeslot| %>
+                <td><label class="contain_timeslot"><%= check_box_tag "user[timeslot_ids][]", timeslot.id, @user.timeslot_ids.include?(timeslot.id) %><div class="checkmark" id="color_5"></div></label></td>
+              <% end %>
+            </tr>
+
+            <tr id='line11'>
+              <td class="timeTableCellTime">19:00</td>
+              <% Timeslot.all[70,7].each do |timeslot| %>
+                <td><label class="contain_timeslot"><%= check_box_tag "user[timeslot_ids][]", timeslot.id, @user.timeslot_ids.include?(timeslot.id) %><div class="checkmark" id="color_6"></div></label></td>
+              <% end %>
+            </tr>
+
+            <tr id='line12'>
+              <td class="timeTableCellTime">20:00</td>
+              <% Timeslot.all[77,7].each do |timeslot| %>
+                <td><label class="contain_timeslot"><%= check_box_tag "user[timeslot_ids][]", timeslot.id, @user.timeslot_ids.include?(timeslot.id) %><div class="checkmark" id="color_6"></div></label></td>
+              <% end %>
+            </tr>
+
+            <tr id='line13'>
+              <td class="timeTableCellTime">21:00</td>
+              <% Timeslot.all[84,7].each do |timeslot| %>
+                <td><label class="contain_timeslot"><%= check_box_tag "user[timeslot_ids][]", timeslot.id, @user.timeslot_ids.include?(timeslot.id) %><div class="checkmark" id="color_7"></div></label></td>
+              <% end %>
+            </tr>
+          </tbody>
+        </table>
+        <%= f.submit "저장" %>
+      </div>
+        
+    <% end %>
+    
+    <div class="timetable_credit">
+        <div>Icons made by <a href="https://www.freepik.com/" title="Freepik" id="credit_black">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons" id="credit_black">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+  </div>
+
+  </body>
+</html>

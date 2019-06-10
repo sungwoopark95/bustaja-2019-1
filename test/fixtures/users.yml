@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  password_digest: MyString
+  teamname: MyString
+  start_date: 
+  end_date: 2019-06-09
+
+two:
+  email: MyString
+  password_digest: MyString
+  teamname: MyString
+  start_date: 
+  end_date: 2019-06-09

@@ -1,0 +1,166 @@
+// Place all the styles related to the Timeslots controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900');
+html {scroll-behavior: smooth;}
+body {height: 100%;
+      font-family: 'Noto Sans KR';
+      cursor: url(cursor.cur),auto;}
+
+#time_body {background-color: white;}
+#time_table {border-collapse: collapse;}
+
+/* 칸 점선 */
+
+td {
+    padding:1px;
+    padding-top: 1.5px;
+    padding-bottom: 1.5px;
+    border-color: lightgray;
+    border-style: dotted;
+    border-width: 0.1px;}
+
+/* 시간표 한 칸 관리 */
+
+.contain_timeslot {
+    display: block;
+    width: 80px;
+    height: 50px;
+    border: 0px solid ;
+    cursor: pointer;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin: 0px;
+    border-radius: 3.3px;
+    }
+
+.contain_timeslot input:checked ~ #color_1 {background-color: #5786FE;}
+.contain_timeslot input:checked ~ #color_2 {background-color: #5A85FB;}
+.contain_timeslot input:checked ~ #color_3 {background-color: #5E84F8;}
+.contain_timeslot input:checked ~ #color_4 {background-color: #6283F4;}
+.contain_timeslot input:checked ~ #color_5 {background-color: #6983F0;}
+.contain_timeslot input:checked ~ #color_6 {background-color: #7283EC;}
+.contain_timeslot input:checked ~ #color_7 {background-color: #7A84E7;}
+
+.contain_timeslot input {
+    display: none;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+    }
+
+.checkmark:after {
+    content: "";
+    position: relative;
+    display: none;
+    }
+
+#user_timeslot_ids_ {
+    display: inherit;
+    }
+ 
+.checkmark { 
+    position: relative;
+    display: inline-block;
+    left: 0;
+    height: 50px;
+    width: 80px;
+    border-radius: 3.3px;
+    transition: 0.18s;
+    }
+
+/* 시간표 전체 위치 및 스타일링 */
+.main_sentence {
+    width: 415px;
+    height: 150px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 26px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: -0.4px;
+    color: #3b3b3b;
+    position: relative;
+    left: 380px;
+    top: 140px;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+.tablebox {
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    padding-left: 3px;
+    padding-right: 14px;
+    position: absolute;
+    right:10%;
+    box-shadow: 0 16px 30px -14px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 130px;
+    height: 750px;
+    z-index: 1;
+    background-color: white;
+    }
+
+/* 시간표 요일 */
+
+.timeTableCellDay
+    {width: 40px;
+    text-align:center;
+    height: 30px;
+    font-size: 14px;
+    padding-bottom: 5px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    border:0px solid;}
+    
+/* 시간표 시간 */
+
+.timeTableCellTime
+    {width: 55px;
+    text-align:center;
+    height: 40px;
+    font-size: 11px;
+    margin-right: 10px;
+    vertical-align: top;
+    font-weight: 400;
+    border:0px solid;}
+
+
+/* 저장 버튼 부분 비활성화시 */
+input[type=submit]{
+    width: 100px;
+    height: 100px;
+    border: solid 1px #5586ff;
+    border-radius: 100%;
+    position: relative;
+    top: -100px;
+    right: 20%;
+    display: inline-table;
+    clear: both;
+    overflow: hidden;
+    z-index: 0;
+    text-align:center;
+    vertical-align: middle;
+    transition: .5s;
+    cursor: pointer;
+    background-color: #5586ff;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.08);
+    font-size: 15px;
+    color: white;
+    }
+    
+/* 저장 버튼 부분 활성화시 */
+input[type=submit]:hover{
+    background-color:white;
+    box-shadow: 0 0 10px 5px rgba(85, 134, 255, 0.8);
+    color: black;
+    }
+
+input[type=submit]:focus {outline:none;}

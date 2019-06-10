@@ -1,0 +1,674 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900');
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    cursor: default;
+    height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {text-decoration: none;
+  color: black;}
+
+hr {margin: 0px;
+    height: 0px;
+    padding: 0px;
+    border-style: solid #979797;
+    border-bottom: 0px;}
+
+#schoolbus {
+    width:150px;
+    margin-top:0px;
+    display: inline-block;
+    position: relative;
+    left:100px;
+}
+
+#home_main_sentence {
+    width: 800px;
+    height: 49px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.52;
+    letter-spacing: -0.4px;
+    color: #3b3b3b;
+    position: relative;
+    left: 420px;
+    top: 130px;
+}
+
+#home_sub_sentence{
+     width: 581px;
+    height: 169px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: -0.8px;
+    color: #3b3b3b;
+    position: relative;
+    left: 420px;
+    top: 150px;
+
+}
+
+/*왼쪽 바 호버 액션*/
+.left_top_nav_3:hover {
+    background-color: #5586ff;
+    cursor: pointer;
+}
+
+.left_top_nav_3 {
+    transition: 0.2s;
+}
+
+#home_left_bottom_nav {
+    bottom:0px;
+
+}
+.left_bottom_nav:hover {
+    background-color: #5586ff;
+    cursor: pointer;
+}
+
+
+/*왼쪽 바 전체*/
+
+#home_nav {
+    display: block;
+    width: 339px;
+    height: 100%;
+    border: solid 0.1px #979797;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+}
+
+
+.left_nav_bar {
+    display: block;
+    width: 339px;
+    height: 100%;
+    border: solid 0.1px #979797;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+}
+
+#logoimg {
+    width:200px;
+    margin-top: 30px;
+    margin-left: 70px;
+    padding-bottom: 20px;
+}
+
+.illustration_nav {
+    margin-top: 30px;
+    margin-left: 70px;
+    padding-bottom: 20px;
+    width: 200px;
+}
+
+/*왼쪽 상단 바*/
+/*시간표 회의록 팀검색 팀생성*/
+.left_top_nav {
+    display: inherit;
+    padding-left: 0px;
+    position: relative;
+    top: 0px;
+    width: 100%;
+    list-style: none;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 3;
+    text-align: center;
+    border-bottom: 0.1px;
+    margin: 0px;
+}
+
+/*로그인.아웃 부분*/
+.left_bottom_nav {
+    display: inherit;
+    padding-left: 0px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    list-style: none;
+    font-family: 'Noto Sans KR';
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 3;
+    text-align: center;
+    border-bottom: 1px;
+    margin: 0px;
+    transition: 0.2s;
+}
+
+
+
+/*팀 검색*/
+
+/*팀 검색시 나타나는 날개 바*/
+.sidenav {
+    height: 60%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 218px;
+    left: 339px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px 10px rgba(0, 0, 0, 0.09);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align:center;
+    opacity: 0;
+}
+
+.sidenav a:hover{
+    color: #5787ff;
+}
+
+/*팀 검색 닫기 버튼*/
+.sidenav .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/*팀 검색, 초기화 버튼*/
+#search_save:hover, #search_reset:hover {
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.23);
+}
+
+#search_save:focus, #search_reset:focus {
+    outline: none;
+}
+
+#search_save {
+    font-family: 'Noto Sans KR';
+    left: 520px;
+    margin-top: 13px;
+    margin-left: 20px;
+    background-color: #5586ff;
+    border-radius: 6px;
+    border-style: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    width: 110px;
+    height: 40px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#search_reset{
+    font-family: 'Noto Sans KR';
+    left: 520px;
+    margin-top: 13px;
+    margin-left: 10px;
+    background-color: #5586ff;
+    border-radius: 6px;
+    border-style: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    width: 110px;
+    height: 40px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/*팀 검색 입력 부분*/
+
+#search_team_name {
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 60px;
+    left: 0px;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    padding-left: 14px;
+    font-size: 21px;
+    font-weight: 400;
+    color: #3D3C3C;
+    border-style: 0.1px solid;
+}
+
+#search_team_name:focus {
+    outline-style: none;
+}
+
+
+/*팀 검색 결과 (아이디, 팀 이름, 날짜 등)*/
+#usertable-home { 
+    position: absolute;
+    top: 30%;
+    margin-left: 15%;
+    font-weight: 200;
+    font-family: 'Noto Sans KR';
+    width: 70%;
+}
+
+#header-home {
+    font-weight: 300;
+    font-size: 20.4px;
+    font-family: 'Noto Sans KR';
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#tableitem-home {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    height: 30px;
+    font-size: 19px;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    text-align: center;
+ }
+
+
+/* 전체 화면 */
+
+.Rectangle {
+    background-color: #fafafa;
+}
+/* 좌측상단 로고 부분 - 이미지로 처리 */
+.logowhite {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    display: inline;
+    margin-top: -70px;
+    margin-left: 20px;
+}
+
+/* 우측상단 '로그인' 버튼 */
+#login {
+    width: 70px;
+    height: 36px;
+    font-family:'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.89;
+    letter-spacing: -0.6px;
+    color: #3b3b3b;
+    display: inline;
+    position: absolute;
+    right:212px;
+    top:58px;
+    overflow:hidden;
+}
+
+#login a {color: #3b3b3b;}
+
+
+/* 우측상단 '회원가입' 버튼 테두리 부분 */
+.signin-home {
+    width: 130px;
+    height: 49px;
+    border-radius: 16px;
+    background-color: #e7e4e4;
+    display: inline;
+    padding: 10px 40px;
+    position: absolute;
+    right:50px;
+    top:50px;
+    overflow:hidden;
+}
+
+/* 우측상단 '회원가입' 글씨 있는 부분 */
+#signin-home {
+    width: 150px;
+    height: 36px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: -0.6px;
+    color: #3b3b3b;
+    display: inline;
+    text-align: center;
+    overflow:hidden;
+    margin-left: auto;
+    margin-top: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.signin-home:hover {
+    cursor: pointer;
+}
+
+.signin-home:focus {
+    outline: none;
+}
+
+
+
+.blue {
+    font-weight: 400;
+    color: #5586ff;
+}
+
+/* 하단 설명부분 '버스타자와 함께~' */
+.sub_sentence {
+    width: 581px;
+    height: 169px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: -0.8px;
+    color: #3b3b3b;
+    position: relative;
+    left: 420px;
+    top: 150px;
+}
+
+/* 메인페이지 일러스트 부분 */
+.illustration {
+    width: 740px;
+    z-index: -1;
+    position: absolute;
+    top: 235px;
+    right: 50px;
+    margin-bottom: 200px;
+}
+
+/* '버스타자 둘러보기' 바깥쪽 파란색 큰 box */
+.blue_box {
+    margin-top: 1000px;
+    width: 100%;
+    height: 750px;
+    background-color: #5586ff;
+    z-index: -1;
+}
+
+/* '버스타자 둘러보기' 텍스트 부분 */
+.overview {
+    width: 400px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    padding: 50px 40px 20px 40px;
+    position: relative;
+    top: 50px;
+    border-bottom: 2px solid white;
+    left: 48.7%;
+    margin-right: auto;
+    margin-bottom: 100px;
+
+}
+/* 시간표 아이콘 있는 흰색 배경 부분 - 옆으로 4개 모두 동일한 CSS 코드 */
+
+.container{
+    width: 850px;
+    height: auto;
+    position: relative;
+    top: 40px;
+    left: 180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pictogram-1, .pictogram-2, .pictogram-3, .pictogram-4 {
+    width: 168px;
+    height: 153px;
+    border-radius: 13px;
+    box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.25);
+    border: solid 1px #f1efef;
+    background-color: #fafafa;
+    display: inline;
+    margin: 0 20px;
+    z-index: 5;
+}
+
+.pictogram-1 {
+    position: relative;
+}
+.pictogram-2 {
+    position: relative;
+}
+.pictogram-3 {
+    position: relative;
+}
+.pictogram-4 {
+    position: relative;
+}
+
+
+/* 픽토그램 하단 기능 이름 부분 - 시간표&회의록 */
+.below_pictogram1 {
+    width: 61px;
+    height: 29px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.32;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    top: 70px;
+    display: inline;
+    left: 190px;
+}
+
+.timetable {
+    padding: 20px 50px;
+    display: inline;
+    margin-right: 40px;
+}
+
+.team_management {
+    padding: 20px 50px;
+    display: inline;
+    margin-right: 40px;
+}
+
+.discussion {
+    padding: 20px 50px;
+    display: inline;
+    margin-right: 40px;
+}
+.notification {
+    padding: 20px 50px;
+    display: inline;
+}
+
+.below {
+    width: 830px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 픽토그램 하단 기능 이름 부분 - 팀원 관리&자동 알림 */
+.below_pictogram2 {
+    width: 86px;
+    height: 29px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.32;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    display: inline;
+    position: relative;
+    top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 200px;
+
+}
+
+/* 기능 이름 하단 설명 부분 - 4개 전체 동일 */
+.description-a, .description-b, .description-c, .description-d {
+    width: 149px;
+    font-family:'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.47;
+    letter-spacing: -0.3px;
+    color: #ffffff;
+    display: inline-block;
+    position: relative;
+    left: 235px;
+    top: 80px;
+    margin: 0 60px 0 0;
+    text-align: center;
+}
+
+.description-d {
+    top: 100px;
+}
+
+.container2 {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer {
+    height: 100px;
+    position: relative;
+    float: right;
+}
+
+.mainpagebus{
+    width: 500px;
+    position: relative;
+    float: right;
+    margin-right: 100px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    top: -60px;
+}
+
+/* 우측 하단 '회원가입 하러 가기' 텍스트 부분 */
+.goto_signin {
+    width: 212px;
+    height: 58px;
+    object-fit: contain;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -1px;
+    color: #000000;
+    position: relative;
+    top: -170px;
+    left: 430px;
+    font-weight: 300;
+
+}
+
+.arrow {
+    transform: rotate(270deg);
+    width: 100px;
+    position: relative;
+    float: right;
+    top: -185px;
+    right: 20px;
+}
+
+/* 회원가입 하러 가기 옆의 화살표는 이미지로 처리해야 될 듯*/
+a {
+    text-decoration: none;
+}
+
+.credit {
+    font-size: 9px;
+    display: block;
+    line-height: 1.3;
+    position: absolute;
+    bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 77%;
+    height: 50px;
+    top: 2170px;
+    right: 0px;
+    background-color: #FAFAFA;
+    color: #BDBDBD;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#credit_black {
+    color:black;
+}
+
+.credit a {
+    color: #BDBDBD;
+}
+
+#credit_name {
+    color: #BDBDBD;
+    font-size: 6px;
+    line-height: 1.5;
+}
+
+.row {
+    border:1px solid black;
+    text-align: center;
+}
+
+.row td {
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+}
+
+.one img {
+    width: 50px;
+    height: 50px;
+}

@@ -1,0 +1,54 @@
+<%= link_to image_tag("logo_3.png", class: "illustration_nav", id: "logoimg-pagever"), '/' %>
+<div class="signin">
+    <p>팀 생성</p>
+</div>
+<div id="warning">
+    <p>*표시는 필수 입력 항목입니다</p>
+</div>
+<%= form_for :user, url: users_path do |f| %>
+    <table>
+        <tbody>
+            <tr>
+                <th class="inputitem">이메일<sup>*</sup></th>
+                <td class="login_td"><input class="inputbox" type="email" name="email" placeholder="bustaja@gmail.com" required></td>
+            </tr>
+            <tr>
+                <th class="inputitem">팀이름<sup>*</sup></th>
+                <td class="login_td"><input class="inputbox" type="text" name="teamname" placeholder="버스타자" required></td>
+            </tr>
+            <tr>
+                <th class="inputitem">비밀번호<sup>*</sup></th>
+                <td class="login_td"><input class="inputbox" type="password" name="password" required></td>
+            </tr>
+            <tr>
+                <th class="inputitem">비밀번호 확인<sup>*</sup></th>
+                <td class="login_td"><input class="inputbox" type="password" name="password_confirmation" required></td>
+            </tr>
+            <tr>
+                <th class="inputitem">출발 날짜<sup>*</sup></th>
+                <td class="login_td"><input class="inputbox" type="date" name="start_date" value="2019-01-01" required></td>
+            </tr>
+            <tr>
+                <th class="inputitem">도착 날짜<sup>*</sup></th>
+                <td class="login_td"><input class="inputbox" type="date" name="end_date" value="2019-01-01" required></td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="regbutton"><button id="button" type="submit">가입하기</button></div>
+<% end %>
+
+<script>
+    // input text 클릭 시 기본 값 사라지는 함수
+        $(document).ready(function(){
+        $('.inputbox').each(function()
+        {this.data = new Object(); //TODO don't overwrite previous data
+        this.data.value = this.value;
+        $(this).focus(function(){
+          if (this.value == this.data.value)
+              this.value = '';});
+        $(this).blur(function(){
+          if (this.value == '')
+              this.value = this.data.value;});});});
+</script>
+
+<script src="jquery-3.4.1.min.js"></script>

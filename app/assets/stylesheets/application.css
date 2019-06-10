@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-success hr {
+  border-top-color: #b1dfbb;
+}
+
+.alert-success .alert-link {
+  color: #0b2e13;
+}
+
+.alert-info {
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+}
+
+.alert-info hr {
+  border-top-color: #abdde5;
+}
+
+.alert-info .alert-link {
+  color: #062c33;
+}
+
+.alert-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.alert-warning hr {
+  border-top-color: #ffe8a1;
+}
+
+.alert-warning .alert-link {
+  color: #533f03;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.alert-danger hr {
+  border-top-color: #f1b0b7;
+}
+
+.alert-danger .alert-link {
+  color: #491217;
+}
+
+#wrapper {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+}
