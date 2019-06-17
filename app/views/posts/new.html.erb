@@ -1,36 +1,79 @@
+<div class="left_nav_bar">
+    <%= link_to image_tag("logo_3.png", class: "illustration_nav", id: "logoimg"), '/' %>
+    <ul class="left_top_nav">
+        <hr>
+        <li class="left_top_nav_3"><%= link_to '시간표', users_show_path %></li>
+        <hr>
+        <li class="left_top_nav_3"><%= link_to '회의록', new_post_path %></li>
+        <hr>
+    </ul>
+    <ul class="left_bottom_nav">
+        <hr>
+        <li><%= link_to '로그아웃', session_path(current_user), method: 'delete'  %></li>
+        <hr>
+    <ul>
+</div>
 
-
-<!--회의록 파트-->
+<div class="Rectangle_bus">
+    <div class ="top-bar">
+        <table id='busmove'>
+            <tbody>
+                <tr class="row">
+                    <% for i in (1..20) %>
+                        <% if i==@progress %>
+                            <td class="one"></td>
+                            <% next %>
+                        <% elsif @significant.include?(i) %>
+                            <td class="two"><%= link_to posts_show_path do %><%= image_tag 'bus-stop.svg' %><% end %></td>
+                        <% else %>
+                            <td></td>
+                        <% end %>
+                    <% end %>
+                    <div id="top_flag"><%= image_tag "flag.png"%></div>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 <div class="main_sentence2_record">
   <span class="blue">회의록</span>을 저장하고,<br><span class="blue">지난 회의록</span>을 확인해보세요.
 </div>
 
 <div id="anchor2" class="container-post">
+    <!--지난 회의록 목록-->
+    <div class="date_nav">
+        <p class="past">지난 회의록</p>
+        <% @posts.each do |post| %>
+            <% if post.user.teamname != current_user.teamname %>
+                <% next %>
+            <% else %>
+                <ul>
+                    <li>
+                        <p class="date"><%= link_to post.title, edit_post_path(post) %></p>
+                        <a rel="nofollow" data-method="delete" href="/posts/<%=post.id%>"><button class="delete">&times;</button></a>
+                    </li>
+                </ul>
+            <% end %>
+        <% end %>
+    </div>
+    
+    <!--새 글 작성하기-->
+    <div class="textfield">
+        <%= form_tag posts_path do %>
+        <div class="upper">
+            <%= text_field_tag :title, nil, class: "removeOnFocus", placeholder: "제목을 입력해주세요" %>
+            <%= button_tag "저장", {id: "save"} %>
+        </div>
+        
+        <div class="notepad">
+            <%= text_area_tag :content, nil, id: "field", placeholder: "회의 내용을 작성해주세요" %>
+        <% end %>
+        </div>
+    </div>
+</div>
 
-	<!--지난 회의록, 회의록 목록-->
-	<div class="date_nav">
-		<p class="past"><a href="/posts/new">지난 회의록</a></p>
-		<% @posts.each do |post| %>
-		<p class="date"><a href="/posts/edit/<%=post.id%>"><%=post.title%></a></p>
-		<a href="/posts/destroy/<%=post.id %>"><span class="label label-danger">삭제</span></a>
-		<% end %>
-	</div>
-
-	
-
-	<!--회의록 텍스트 입력-->
-	<div class="textfield">
-		<!-- 회의록 제목-->
-		<form action="/posts/create" method="post">
-			<div class="upper">
-				<input name="title" id="title" type="text" placeholder="회의록 제목을 작성하세요." class="removeOnFocus">
-				<button id="save" type="submit" >저장</button>
-			</div>
-			<!-- 회의록 내용-->
-			<div class="notepad">
-				<textarea name="content" id="field" type="text" placeholder="회의록을 작성하세요." class="removeOnFocus"></textarea>
-			</div>
-		</form>
-	</div>
+<div class="timetable_credit">
+    <div>Icons made by <a href="https://www.freepik.com/" title="Freepik" id="credit_black">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons" id="credit_black">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 </div>

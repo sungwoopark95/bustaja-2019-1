@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190609183155) do
+ActiveRecord::Schema.define(version: 20190617052015) do
 
   create_table "posts", force: :cascade do |t|
     t.text     "title"
     t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "timeslots", force: :cascade do |t|
